@@ -1,11 +1,10 @@
 #!/usr/bin/env python3
 
 """
-This module contains the function add that takes
-two float arguments and returns their sum as a float.
+import module
 """
 
 
 def add(a: float, b: float) -> float:
-    """Returns the sum of two float arguments."""
+    """Return the sum of two floats"""
     return a + b
