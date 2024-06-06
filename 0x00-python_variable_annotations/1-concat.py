@@ -2,6 +2,6 @@
 """import module"""
 
 
-def add(a: float, b: float) -> float:
+def concat(str1: str, str2: str) -> str:
     """Return the sum of two floats"""
-    return a + b
+    return str1 + str2
