@@ -49,3 +49,28 @@ class TestGetJson(unittest.TestCase):
         self.assertEqual(result, test_payload)
         # Assert that the requests.get method was called with the correct URL
         expected.assert_called_once_with(test_url)
+        
+        
+class TestMemoize(unittest.TestCase):
+    """doc doc doc"""
+
+    def test_memoize(self) -> None:
+        """doc doc doc"""
+
+        class TestClass:
+            """doc doc doc"""
+
+            def a_method(self) -> int:
+                """doc doc doc"""
+                return 42
+
+            @memoize
+            def a_property(self) -> int:
+                """doc doc doc"""
+                return self.a_method()
+
+        with patch.object(TestClass, "a_method", return_value=42) as mocked:
+            test_class = TestClass()
+            self.assertEqual(test_class.a_property, 42)
+            self.assertEqual(test_class.a_property, 42)
+            mocked.assert_called_once()
